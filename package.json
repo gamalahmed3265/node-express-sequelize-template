@@ -8,8 +8,8 @@
   "description": "A production-ready Express.js boilerplate with Sequelize ORM",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "dev": "node init && nodemon src/index.js",
+    "start": "node init && node src/index.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.310.0",
