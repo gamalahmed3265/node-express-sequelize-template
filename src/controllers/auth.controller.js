@@ -130,6 +130,11 @@ const authController = {
         logger.warn(`Login failed - user not found: ${email}`);
         throw new BadRequestError('User not found');
       }
+
+      if(process.env.EMAIL_VERIFICATION_REQUIRED && !user.email_verified) {
+        logger.warn(`Login failed - email not verified: ${email}`);
+        throw new BadRequestError('Email not verified');
+      }
       
       const passwordMatch = await bcrypt.compare(password, user.password_hash);
       

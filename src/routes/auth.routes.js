@@ -42,7 +42,6 @@ authRoutes.post(
 
 authRoutes.post(
   '/auth/login', 
-  verifiedEmailRequired,
   validate(loginSchema),
   authController.login
 );

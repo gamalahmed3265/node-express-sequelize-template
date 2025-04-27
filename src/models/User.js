@@ -33,6 +33,11 @@ class User extends Model {
           allowNull: false,
           unique: true
         },
+        email_verified: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false,
+          defaultValue: false
+        },
         password: DataTypes.VIRTUAL, // Virtual field that doesn't exist in the database
         password_hash: {
           type: DataTypes.STRING(255),
@@ -103,3 +108,4 @@ class User extends Model {
 }
 
 module.exports = User;
+
